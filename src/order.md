@@ -11,21 +11,21 @@ layout: base.njk
 
 The WiReSens Gloves use a zero-potential scanning readout circuit (shown to [reduce cross talk](https://www.sciencedirect.com/science/article/abs/pii/S0924424798002040) between electrodes in resistive sensing arrays). You can order the circuits fully assembled (minus the header pins) from JLCPCB. 
 
-1. Head to [JLCPCB](https://jlcpcb.com/) and upload the gerber file: ([download](./assets/16x16Feather.zip))
+1. Head to [JLCPCB](https://jlcpcb.com/) and upload the gerber file: ([download](assets/16x16Feather.zip))
 
-![add gerber](./assets/add_gerber.png)
+![add gerber](assets/add_gerber.png)
 
 2. Enter the number of boards you'd like to order under "PCB Qty" (you need one for each glove). 
 
 3. The other default settings are fine. Scroll down to PCB Assembly. And select "Standard" for PCBA type and "Both sides' for assembly side
 
-![assembly](./assets/pcb_assembly.png)
+![assembly](assets/pcb_assembly.png)
 
 4. Select desired build time and click "Next"
 
-5. Upload the Bill of Materials  (BOM) ([download](./assets/bom.csv)) and Component Placement (CPL) ([download](./assets/positions.csv)) files
+5. Upload the Bill of Materials  (BOM) ([download](assets/bom.csv)) and Component Placement (CPL) ([download](assets/positions.csv)) files
 
-![bom](./assets/bom_cpl.png)
+![bom](assets/bom_cpl.png)
 
 6. Review the matched parts, making sure all are selected and none are in shortfall. 
 
@@ -35,20 +35,27 @@ If any parts are in shortfall, you can either order them to your cart or order t
 
 A window will show up with a list of parts matching the shortfall. Check that the first part patches the description, and click on it.
 
-![shortfall](./assets/shortfall.png)
+![shortfall](assets/shortfall.png)
 
 Change the QTY to the desired number of components (at least covering what is in shortfall, but you can always order more to be safe) and preorder.
 
-![preorder](./assets/preorder.png)
+![preorder](assets/preorder.png)
 
 7. Click "next" on component placements, and on the quote and order tab select "Sensor/Controller/Precision Instrument -> Pressure Sensors" for the product description. Click save to cart and complete order. 
 
-![complete](./assets/complete_order.png)
+![complete](assets/complete_order.png)
 
 
 ## Flexible Printed Circuit Board (FPCB) Electrodes
 
+The gloves use FPCBs to compactly route the sensing electrodes along the contour of the hand. Two FPCBs are needed per glove, Submit **two separate orders**, one for the top array, one for the bottom array. Our designs come in large and small sizes, or you can [create your own](). We reccomend using the [Pcbway Instant Quote Tool](https://www.pcbway.com/flexible.aspx) to manufacture the top and bottom flex PCBs.
 
+1. 
+
+     * The appropriate Gerber files.
+     * Component placement files (`.pos`).
+     * The shared BOM file.
+   * In the order comments, **copy-paste the notes** from the manufacturing detail PDFs exactly.
 
 
 
