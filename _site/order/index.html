@@ -20,7 +20,112 @@
   </header>
   <main class="site-main">
     <h1>Order Our Designs</h1>
-<p>Instructions for ordering the WiReSens Glove designs will go here.</p>
+<h2>Readout Circuit</h2>
+<p>The WiReSens Gloves use a zero-potential scanning readout circuit (shown to <a href="https://www.sciencedirect.com/science/article/abs/pii/S0924424798002040">reduce cross talk</a> between electrodes in resistive sensing arrays). You can order the circuits fully assembled (minus the header pins) from JLCPCB.</p>
+<ol>
+<li>Head to <a href="https://jlcpcb.com/">JLCPCB</a> and upload the gerber file: (<a href="assets/16x16Feather.zip">download</a>)</li>
+</ol>
+<p><img src="/assets/add_gerber.png" alt="add gerber"></p>
+<ol start="2">
+<li>
+<p>Enter the number of boards you'd like to order under &quot;PCB Qty&quot; (you need one for each glove).</p>
+</li>
+<li>
+<p>The other default settings are fine. Scroll down to PCB Assembly. And select &quot;Standard&quot; for PCBA type and &quot;Both sides' for assembly side</p>
+</li>
+</ol>
+<p><img src="/assets/pcb_assembly.png" alt="assembly"></p>
+<ol start="4">
+<li>
+<p>Select desired build time and click &quot;Next&quot;</p>
+</li>
+<li>
+<p>Upload the Bill of Materials  (BOM) (<a href="assets/bom.csv">download</a>) and Component Placement (CPL) (<a href="assets/positions.csv">download</a>) files</p>
+</li>
+</ol>
+<p><img src="/assets/bom_cpl.png" alt="bom"></p>
+<ol start="6">
+<li>Review the matched parts, making sure all are selected and none are in shortfall.</li>
+</ol>
+<p>If any parts are in shortfall, you can either order them to your cart or order them to your address and solder them yourself. So that you may order the board when the components are in stock. Click the Search icon in the Matched Part Detail of the shortfall part.</p>
+<p>A window will show up with a list of parts matching the shortfall. Check that the first part patches the description, and click on it.</p>
+<p><img src="/assets/shortfall.png" alt="shortfall"></p>
+<p>Change the QTY to the desired number of components (at least covering what is in shortfall, but you can always order more to be safe) and preorder.</p>
+<p><img src="/assets/preorder.png" alt="preorder"></p>
+<ol start="7">
+<li>Click &quot;next&quot; on component placements, and on the quote and order tab select &quot;Sensor/Controller/Precision Instrument -&gt; Pressure Sensors&quot; for the product description. Click save to cart and complete order.</li>
+</ol>
+<p><img src="/assets/complete_order.png" alt="complete"></p>
+<h2>Flexible Printed Circuit Board (FPCB) Electrodes</h2>
+<p>The gloves use flexible PCBs (FPCBs) to route sensing electrodes along the contour of the hand. <strong>Two FPCBs are required per glove</strong>—one for the <strong>top array</strong> and one for the <strong>bottom array</strong>.<br>
+You must <strong>place two separate orders</strong>: one for the top PCB and one for the bottom PCB.</p>
+<p>Our reference designs are available in <strong>large</strong> and <strong>small</strong> sizes, or you can <a href="">create your own</a>.<br>
+We recommend using the <a href="https://www.pcbway.com/flexible.aspx">PCBWay Flex PCB Instant Quote Tool</a> to manufacture both top and bottom boards.</p>
+<hr>
+<h3>1. Order the <strong>Top PCB</strong></h3>
+<ol>
+<li>
+<p>Open the Flex PCB Instant Quote Tool.</p>
+</li>
+<li>
+<p>Enter the manufacturing details for your size:</p>
+<ul>
+<li><strong>Large:</strong> <a href="assets/large_pcb_top_details.pdf">download details (PDF)</a></li>
+<li><strong>Small:</strong> <a href="assets/small_pcb_top_details.pdf">download details (PDF)</a><br>
+<em>(Follow the “Special Request” instructions exactly as listed in the PDF.)</em></li>
+</ul>
+</li>
+<li>
+<p><strong>Quantity tip:</strong> The number you select equals the number of final sensors you’ll have. For example, ordering <strong>2 top PCBs</strong> yields enough for <strong>2 sensors</strong> (one glove pair).<br>
+<img src="/assets/specify_details.png" alt="Specify details"></p>
+</li>
+<li>
+<p>If you want ready-to-use PCBs, add <strong>assembly service</strong>. For top PCBs, <strong>components are assembled on the bottom side</strong>.<br>
+<img src="/assets/assembly.png" alt="Assembly"></p>
+</li>
+<li>
+<p>Click <strong>Calculate</strong>, select your shipping speed, and save the order to your cart.<br>
+<img src="/assets/calculate.png" alt="Save to cart"></p>
+</li>
+<li>
+<p>Upload the required files for your chosen size:</p>
+<ul>
+<li><strong>Gerbers:</strong> <a href="assets/Large_FPCB_Top_Gerbers.zip">Large</a> | <a href="assets/Small_FPCB_Top_Gerbers.zip">Small</a></li>
+<li><strong>BOM:</strong> <a href="assets/flex_bom.xlsx">Download</a></li>
+<li><strong>Centroid:</strong> <a href="assets/large_top.pos">Large</a> | <a href="assets/small_top.pos">Small</a><br>
+<img src="/assets/upload_files.png" alt="Upload files"></li>
+</ul>
+</li>
+<li>
+<p>Once all files are uploaded, click <strong>Submit Order Now</strong>.</p>
+</li>
+</ol>
+<hr>
+<h3>2. Order the <strong>Bottom PCB</strong></h3>
+<p>Repeat the same process, but with <strong>bottom PCB details and files</strong>:</p>
+<ul>
+<li><strong>Manufacturing details:</strong> <a href="assets/large_pcb_bot_details.pdf">Large</a> | <a href="assets/small_pcb_bot_details.pdf">Small</a></li>
+<li><strong>Assembly side:</strong> <strong>Top</strong></li>
+<li><strong>Gerbers:</strong> <a href="assets/Large_FPCB_Bot_Gerbers.zip">Large</a> | <a href="assets/Small_FPCB_Bot_Gerbers.zip">Small</a></li>
+<li><strong>BOM:</strong> <a href="assets/flex_bom.xlsx">Download</a></li>
+<li><strong>Centroid:</strong> <a href="assets/large_back.pos">Large</a> | <a href="assets/small_bot.pos">Small</a></li>
+</ul>
+<h2>Other Materials for Assembly</h2>
+<p>For the readout circuit:</p>
+<ul>
+<li><a href="https://www.digikey.com/en/products/detail/adafruit-industries-llc/3591/8119805?gclsrc=aw.ds&amp;gad_source=1&amp;gad_campaignid=20243136172&amp;gbraid=0AAAAADrbLlgIO8C_ilnVVgWgsCbx8uOy1&amp;gclid=CjwKCAjwwNbEBhBpEiwAFYLtGMsl5UhCbYTguXWj6P3x7uX0yz5KJd8kKBPR7fHwGWJzBXyPuz6oORoCrzEQAvD_BwE">Adafruit Huzzah ESP32 Feather Board</a></li>
+<li><a href="https://www.amazon.com/2-54mm-Stright-Female-Single-Connector/dp/B0DYYL6CQF?gQT=1">2.54 mm header pins</a> (for connecting to the ESP32 Microcontroller)</li>
+<li><a href="https://www.amazon.com/dp/B07RY9QZ4Q">0.5 mm Pitch Flex Cable Connectors (16-pin)</a> (for connecting to the sensor. 2 needed per glove.)</li>
+<li><a href="https://www.matterhackers.com/store/l/pro-series-pla/sk/MY6C8H7E">PLA Filament</a> (for printing the circuit enclosure)</li>
+<li><a href="https://www.amazon.com/VELCRO-Brand-ONE-WRAP-Double-Sided-Multi-Purpose/dp/B00JWU77N2/ref=sr_1_11?crid=1D6ZL1G7ND6Z5&amp;dib=eyJ2IjoiMSJ9.-ycYKzOndCCCo7OcaxsPn6GhyrddOLFoIcQyazfgWO7SVIA75XHtZBpQGx_JMi4wTVHZvnfa0gvC0lsRa9C2P4y6aCsHLD4FUdbySjZDON7TTznO8knROgZEPL1bII_-4wLK7bIxW_SzHMWVUY2ktHyXhrBMDMYBo70kYNMIoJJg82pmGvEUe3tB90TKeoABJuoY0-JS69h-A6MigTCtb3Z2ZdEwhlvzsE8bxezqwRPE-a1_edVr-PMw7uje8zeTHjqd_-KnGX8ApM-3Q9KCpZ_BygR95a3yvVvYuPOeExY.F-Git40A0vEgHGfnzXMoIRJ3LJ_HachBhDROv_GkK2o&amp;dib_tag=se&amp;keywords=amazon%2Bvelcro%2Broll&amp;qid=1754663856&amp;sprefix=amazon%2Bvelcro%2Broll%2Caps%2C102&amp;sr=8-11&amp;th=1">Velcro Wrist Strap</a></li>
+</ul>
+<p>For the sensor:</p>
+<ul>
+<li><a href="https://www.mcmaster.com/catalog/131/4075/9010K51">Adhesive-Backed Silicone Rubber (McMaster 9010K51)</a></li>
+<li><a href="https://www.testequity.com/product/105ST1704-1704-36X150?gad_source=1&amp;gad_campaignid=15361162544&amp;gbraid=0AAAAACbfxe3enEdoGNHWxGsmpIO1VT7L9&amp;gclid=CjwKCAjwwNbEBhBpEiwAFYLtGLfEWRpY1I3_rKat3TOYgGDo0PvJwmjR_XOuapeyblOQraFduUomABoC7JEQAvD_BwE">Pressure-sensitive Conductive Sheet (Velostat)</a></li>
+<li><a href="https://www.amazon.com/dp/B092HM55SQ?ref=ppx_yo2ov_dt_b_fed_asin_title&amp;th=1">Anti-slip Gloves</a></li>
+<li><a href="https://www.amazon.com/GH1200-Brush-Applicator-Nozzle-Cyanoacrylate/dp/B0D9SR1XNP/ref=sr_1_3?dib=eyJ2IjoiMSJ9.XOjNPA5U1xDtBJUZWk7DHXejkpRsMFpxCZxejko5J5Tjvt_lrNILVLFK5RsFqUpz4QOA_ex2JyfQAYZJL-kKh9f3UIBBF4qseMsiLeo3JbH5UcLUeDwVSA2y3jMWUKmXs42pgt-5_zETAYzSXW7lBNhx_giOEf0A9kZz1F1MKeW-S_FHVVE_SFYUwWfsyemD0vOR9w5VDMar2zsSOmmtOpC6IoHWzX90ZB7kvMe8gFY.Bf2M33syK1qe436yDlzgt2DI8hMu6ps5K2PSACJ_9cw&amp;dib_tag=se&amp;hvadid=548236050385&amp;hvdev=c&amp;hvexpln=0&amp;hvlocphy=9002000&amp;hvnetw=g&amp;hvocijid=14014353149079918094--&amp;hvqmt=e&amp;hvrand=14014353149079918094&amp;hvtargid=kwd-1183129925929&amp;hydadcr=29474_10168008&amp;keywords=super+glue+on+amazon&amp;mcid=14a6ea32bba73e9387210ce40e1804f5&amp;qid=1754664474&amp;sr=8-3">Super Glue</a></li>
+</ul>
 
   </main>
   <footer class="site-footer">

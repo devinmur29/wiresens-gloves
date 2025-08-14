@@ -48,14 +48,47 @@ Change the QTY to the desired number of components (at least covering what is in
 
 ## Flexible Printed Circuit Board (FPCB) Electrodes
 
-The gloves use FPCBs to compactly route the sensing electrodes along the contour of the hand. Two FPCBs are needed per glove, Submit **two separate orders**, one for the top array, one for the bottom array. Our designs come in large and small sizes, or you can [create your own](). We reccomend using the [Pcbway Instant Quote Tool](https://www.pcbway.com/flexible.aspx) to manufacture the top and bottom flex PCBs.
+The gloves use flexible PCBs (FPCBs) to route sensing electrodes along the contour of the hand. **Two FPCBs are required per glove**—one for the **top array** and one for the **bottom array**.
+You must **place two separate orders**: one for the top PCB and one for the bottom PCB.
 
-1. 
+Our reference designs are available in **large** and **small** sizes, or you can [create your own]().
+We recommend using the [PCBWay Flex PCB Instant Quote Tool](https://www.pcbway.com/flexible.aspx) to manufacture both top and bottom boards.
 
-     * The appropriate Gerber files.
-     * Component placement files (`.pos`).
-     * The shared BOM file.
-   * In the order comments, **copy-paste the notes** from the manufacturing detail PDFs exactly.
+---
+
+### 1. Order the **Top PCB**
+
+1. Open the Flex PCB Instant Quote Tool.
+2. Enter the manufacturing details for your size:
+
+   * **Large:** [download details (PDF)](assets/large_pcb_top_details.pdf)
+   * **Small:** [download details (PDF)](assets/small_pcb_top_details.pdf)
+     *(Follow the “Special Request” instructions exactly as listed in the PDF.)*
+3. **Quantity tip:** The number you select equals the number of final sensors you’ll have. For example, ordering **2 top PCBs** yields enough for **2 sensors** (one glove pair).
+   ![Specify details](assets/specify_details.png)
+4. If you want ready-to-use PCBs, add **assembly service**. For top PCBs, **components are assembled on the bottom side**.
+   ![Assembly](assets/assembly.png)
+5. Click **Calculate**, select your shipping speed, and save the order to your cart.
+   ![Save to cart](assets/calculate.png)
+6. Upload the required files for your chosen size:
+
+   * **Gerbers:** [Large](assets/Large_FPCB_Top_Gerbers.zip) | [Small](assets/Small_FPCB_Top_Gerbers.zip)
+   * **BOM:** [Download](assets/flex_bom.xlsx)
+   * **Centroid:** [Large](assets/large_top.pos) | [Small](assets/small_top.pos)
+     ![Upload files](assets/upload_files.png)
+7. Once all files are uploaded, click **Submit Order Now**.
+
+---
+
+### 2. Order the **Bottom PCB**
+
+Repeat the same process, but with **bottom PCB details and files**:
+
+* **Manufacturing details:** [Large](assets/large_pcb_bot_details.pdf) | [Small](assets/small_pcb_bot_details.pdf)
+* **Assembly side:** **Top**
+* **Gerbers:** [Large](assets/Large_FPCB_Bot_Gerbers.zip) | [Small](assets/Small_FPCB_Bot_Gerbers.zip)
+* **BOM:** [Download](assets/flex_bom.xlsx)
+* **Centroid:** [Large](assets/large_back.pos) | [Small](assets/small_bot.pos)
 
 
 
