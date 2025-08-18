@@ -34,6 +34,23 @@ module.exports = function(eleventyConfig) {
     return defaultImageRenderer(tokens, idx, options, env, self);
   };
 
+const defaultLinkRenderer = md.renderer.rules.link_open || function(tokens, idx, options, env, self) {
+  return self.renderToken(tokens, idx, options);
+};
+
+md.renderer.rules.link_open = function(tokens, idx, options, env, self) {
+  const token = tokens[idx];
+  const hrefIndex = token.attrIndex("href");
+  if (hrefIndex >= 0) {
+    let href = token.attrs[hrefIndex][1];
+    if (!href.startsWith("http") && !href.startsWith("/") && !href.startsWith("#")) {
+      token.attrs[hrefIndex][1] = "/" + href.replace(/^(\.\/|\/)*/, "");
+    }
+  }
+  return defaultLinkRenderer(tokens, idx, options, env, self);
+};
+
+
   eleventyConfig.setLibrary("md", md);
 
   return {
