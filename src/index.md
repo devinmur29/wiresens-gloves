@@ -23,7 +23,13 @@ layout: base.njk
 
 ## Capture relative force distributions across the full palm
 
-- Will show video of Small size and Large Size increasing pressure for each finger region and center of hand
+<div style="position: relative; padding-bottom: 56.25%; height: 0; text-align: center;">
+  <iframe src="https://www.youtube.com/embed/XlyN0DDsffI" 
+          style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" 
+          frameborder="0" allowfullscreen>
+  </iframe>
+</div>
+
 
 ## Wirelessly capture dexterous manipulation in any environment
 
