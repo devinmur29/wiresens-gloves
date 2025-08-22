@@ -13,18 +13,58 @@
       <a href="/order/">Order Our Designs</a>
       <a href="/make/">Make your own Design</a>
       <a href="/manufacturing/">Manufacturing + Assembly Guide</a>
-      <a href="https://forms.gle/your-form-link" target="_blank">Request Pre-Made Kit</a>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSeC9ZYmYzShO8EN6ykx-N-RFPJFUGItifUeHzMZDMI_j6rxug/viewform?usp=sharing&ouid=103426511521560236772" target="_blank">Request Pre-Made Kit</a>
       <a href="/recording/">Recording Instructions</a>
       <a href="/applications/">Applications</a>
     </nav>
   </header>
   <main class="site-main">
     <h1>Recording Instructions</h1>
-<p>Links to software repositories and setup instructions will go here.</p>
+<p>Before taking a recording with your gloves, you will need to download software and firmware, upload firmware to microcontrollers, and use the software to cofigure the devices.</p>
+<h2>Setup Software</h2>
+<p>Follow the installation instructions in the following GitHub Repos</p>
+<ul>
+<li>WiSens Toolkit <a href="https://github.com/devinmur29/WiSensToolkit/tree/main">repo link</a>: Firmware for microcontrollers</li>
+<li>WiReSensBackend <a href="https://github.com/devinmur29/WiReSensBackend">repo link</a>: Python library for interfacing with sensors</li>
+<li>(Optional) WiReSensWeb <a href="https://github.com/devinmur29/WiReSensWeb">repo link</a>: Real-time visualizer and GUI. Accessible from <a href="https://wi-re-sens-web.vercel.app/">https://wi-re-sens-web.vercel.app/</a> with an internet connection. To have access to the web GUI without an internet connection you will need to set it up locally.</li>
+</ul>
+<h2>Upload Firmware</h2>
+<p>A transmitter is defined as a microcontroller which is attached to the readout circuit connected to an actual glove sensor via flex cables.</p>
+<p>A receiver is a lone microcontroller which receives wireless data from the glove sensors (the transmitter microcontroller) and forwards it to the laptop.</p>
+<p>If you plan to use ESP-NOW (recommended for most portable, fastest throughput, longest range wireless comms), you will need to upload firmware to both the receiver and transmitter microcontrollers. Otherwise (if you plan to use over USB-serial, WiFi, or Bluetooth), it is only necessary to upload to the transmitter.</p>
+<h3>Upload Receiver Firmware</h3>
+<ol>
+<li>Grab an ESP32 which will be the receiver, and connect it to your laptop via a USB cable.</li>
+<li>Open the folder with the WiSensToolkit repository in VsCode. Set the serial port by searching for the <code>pioarduino: set project port</code> command.  Ctrl + Shift + P &gt; Search and select command &gt; Select Serial Port. The Port will say something like CP210x USB to UART Bridge.<br>
+<img src="/assets/setport1.png" alt="select port 1"><br>
+<img src="/assets/setport2.png" alt="select port 2"></li>
+<li>Open the file platformio.ini and make sure the <code>build_src_filter</code> reads <code>build_src_filter = +&lt;espReceive.cpp&gt; -&lt;scanArray.cpp&gt; -&lt;noCalibrate.cpp&gt;</code>. (This sets the receiver code as the code to be uploaded)</li>
+<li>Upload espReceive.cpp by running the <code>pioarduino: Upload and monitor</code> command<br>
+<img src="/assets/uploadFirmware.png" alt="upload"></li>
+<li>In the serial monitor that opens, find and make a note of the MAC address of the receiver, converting each hex to decimal (you can use an <a href="https://www.rapidtables.com/convert/number/hex-to-decimal.html">online converter</a>). For example <code>14:2b:2f:ca:6b:80</code> -&gt; <code>[20,43,47,202,107,128]</code>. When done you can disconnect the receiver from your laptop.</li>
+</ol>
+<p><img src="/assets/macAddress.png" alt="mac"></p>
+<h3>Upload Transmitter Firmware</h3>
+<p>Grab the esp32 connected to the readout circuit to be the transmitter, and connect it to your laptop via a USB cable. Follow steps 1-4 again, instead making sure the build_src_filter is <code>build_src_filter = -&lt;espReceive.cpp&gt; -&lt;scanArray.cpp&gt; +&lt;noCalibrate.cpp&gt;</code></p>
+<h2>Configure Transmitter</h2>
+<p>The rest of the setup takes place in the WiReSensBackend and Web GUI.</p>
+<ol>
+<li>Activate your python environment and start the python backend (python <a href="http://startBackend.py">startBackend.py</a>). Also visit <a href="https://wi-re-sens-web.vercel.app/">https://wi-re-sens-web.vercel.app/</a> in the browser.</li>
+<li></li>
+<li>Load config → oneGloveTransmitter{left or right}.json. Device Panel → Edit button → Program Device4</li>
+<li>Load config → oneGloveReceiver{left or right}.json.  Click Record to test that the device is working.</li>
+</ol>
+<h2>Recording from the Web GUI</h2>
+<h2>Calibrating the Gloves</h2>
+<h2>Recording from the Backend</h2>
+<h2>Running custom Python methods on data in real time</h2>
 
   </main>
   <footer class="site-footer">
-    <p>&copy; NaN WiReSens Glove. All rights reserved.</p>
+    <p>&copy; <span id="year"></span>  Devin Murphy.  Code and Hardware Open-source under MIT License — please credit the authors.</p>
   </footer>
 </body>
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
 </html> 

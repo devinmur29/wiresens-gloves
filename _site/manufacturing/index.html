@@ -13,17 +13,193 @@
       <a href="/order/">Order Our Designs</a>
       <a href="/make/">Make your own Design</a>
       <a href="/manufacturing/">Manufacturing + Assembly Guide</a>
-      <a href="https://forms.gle/your-form-link" target="_blank">Request Pre-Made Kit</a>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSeC9ZYmYzShO8EN6ykx-N-RFPJFUGItifUeHzMZDMI_j6rxug/viewform?usp=sharing&ouid=103426511521560236772" target="_blank">Request Pre-Made Kit</a>
       <a href="/recording/">Recording Instructions</a>
       <a href="/applications/">Applications</a>
     </nav>
   </header>
   <main class="site-main">
     <h1>Manufacturing + Assembly Guide</h1>
+<p>Before starting, make sure you’ve completed the steps in the <a href="https://wiresens-gloves.vercel.app/order/">Ordering Guide</a> to obtain all required materials. A visual overview of the necessary materials is shown below:</p>
+<p><img src="/assets/manufacturing.png" alt="manufacturing"></p>
+<p>To build the gloves, you will need access to:</p>
+<ul>
+<li>A <strong>laser cutter</strong> (CO₂ recommended)</li>
+<li>A <strong>3D printer</strong> (PLA filament recommended)</li>
+</ul>
+<p>If you do not have access to these tools, you may use external vendors. We provide examples for laser cutting and 3D printing in the relevant sections below.</p>
+<h3>Overview of Steps</h3>
+<ol>
+<li>Laser cut silicone rubber and Velostat layers</li>
+<li>3D print the readout circuit enclosure and alignment guide</li>
+<li>Align and assemble the sensor layers, then attach flex cables</li>
+<li>Glue the sensor assembly into the glove</li>
+<li>Connect the glove to the readout circuit using flex cables</li>
+</ol>
+<hr>
+<h2>Step 1: Laser Cut Supporting Layers</h2>
+<video autoplay muted loop playsinline>
+  <source src="../assets/LaserCut.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+<p>You will cut <strong>two adhesive-backed silicone rubber layers</strong> and <strong>one Velostat layer</strong>.</p>
+<p>If you don’t have a laser cutter, you can outsource the job to:</p>
+<ul>
+<li><a href="https://www.sendcutsend.com">SendCutSend (rubbers/plastics)</a></li>
+<li><a href="https://www.ponoko.com">Ponoko (small-scale fabrication)</a></li>
+</ul>
+<p><strong>Instructions:</strong></p>
+<ol>
+<li>
+<p>Download the appropriate SVG outline:</p>
+<ul>
+<li><a href="/assets/smallGloveCut.svg">Small Glove Cut</a></li>
+<li><a href="/assets/largeGloveCut.svg">Large Glove Cut</a></li>
+</ul>
+</li>
+<li>
+<p>Open the SVG in your laser cutter software. Ensure the document units are set to <strong>millimeters (mm)</strong>. Verify the dimensions:</p>
+<ul>
+<li>Small outline height: <strong>178.17 mm</strong></li>
+<li>Large outline height: <strong>209.75 mm</strong></li>
+</ul>
+<p><img src="/assets/checkdims.png" alt="check dimensions"></p>
+</li>
+<li>
+<p>Refer to <a href="/assets/lasercutting.txt"><code>lasercutting.txt</code></a> for recommended <strong>power, speed, and frequency settings</strong>.</p>
+</li>
+<li>
+<p>Cut the following:</p>
+<ul>
+<li>
+<p><strong>Two silicone rubber layers:</strong></p>
+<ul>
+<li>One in the default orientation</li>
+<li>One mirrored horizontally</li>
+</ul>
+</li>
+<li>
+<p><strong>One Velostat layer</strong></p>
+</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2>Step 2: 3D Print Enclosure and Alignment Guide</h2>
+<p><img src="/assets/housing_prusa.png" alt="housing img"></p>
+<p>If you don't have a 3d printer, you can outsource the job to <a href="https://www.xometry.com/capabilities/3d-printing-service/pla/">Xometry</a></p>
+<p><strong>Instructions:</strong></p>
+<ol>
+<li>
+<p>Download the STL files:</p>
+<ul>
+<li>Enclosure (both files needed): <a href="/assets/pcbhousingtop.stl">Top</a>, <a href="/assets/pcbhousingbottom.stl">Bottom</a></li>
+<li>Alignment guide (choose the one for your size): <a href="/assets/largeGloveNestSized.stl">Large</a>, <a href="/assets/gloveSmallNestSized.stl">Small</a></li>
+</ul>
+</li>
+<li>
+<p>Print using <strong>PLA filament</strong>.</p>
+<ul>
+<li>Add supports (automatic painting for overhang &gt; 25%  is sufficient).</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2>Step 3: Align Sensor Layers and Attach Cables</h2>
+<p>⚠️ This is the <strong>most delicate step</strong>. Work carefully to avoid damaging the layers.</p>
+<p><strong>Instructions:</strong></p>
+<ol>
+<li>
+<p>Place one <strong>silicone rubber PCB layer</strong> (adhesive side up) into the alignment nest.</p>
+<ul>
+<li>Remove adhesive backing.</li>
+<li>Place the Velostat layer on top and press along the edges.</li>
+<li>Remove the two-layer stack from the nest.</li>
+</ul>
+</li>
+<li>
+<p>Flip the nest over. Place the <strong>second PCB layer</strong> adhesive side up.</p>
+<ul>
+<li>Remove adhesive backing.</li>
+<li>Place the two-layer stack (from step 1) on top, Velostat side down.</li>
+<li>Press edges to seal. Remove the three-layer stack.</li>
+</ul>
+</li>
+<li>
+<p>Place an adhesive-backed silicone rubber layer into the nest, adhesive side up.</p>
+<ul>
+<li>Remove backing.</li>
+<li>Place the three-layer stack on top. Press edges to seal. Remove four-layer stack.</li>
+</ul>
+</li>
+<li>
+<p>Flip the nest. Place the <strong>second silicone rubber layer</strong> adhesive side up.</p>
+<ul>
+<li>Remove backing.</li>
+<li>Place the four-layer stack PCB side down. Press edges to seal. Remove the final <strong>five-layer sensor assembly</strong>.</li>
+</ul>
+</li>
+<li>
+<p>Locate the flex connectors on the top and bottom sensor layers.</p>
+<ul>
+<li>Gently flip them up, insert a flex cable into each connector, then flip down to lock.</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2>Step 4: Glue Sensor into Glove</h2>
+<p><strong>Instructions:</strong></p>
+<ol>
+<li>
+<p>Turn the glove <strong>inside out</strong> and wear it, with the grippy side touching your palm.</p>
+</li>
+<li>
+<p>Place the sensor on the table in the same orientation as your hand. You can verify the orientation by placing the hand wearing the glove onto the sensor and making sure the thumbs and pinky fingers touch.</p>
+</li>
+<li>
+<p>Apply <strong>super glue</strong> to the <strong>tips of each sensor finger</strong>.</p>
+<ul>
+<li>Touch the glove fingertips to the glued sensor tips.</li>
+<li>Hold in place for ~45 seconds.</li>
+</ul>
+</li>
+<li>
+<p>Remove the glove, then flip it inside out again so that the sensor is now inside.</p>
+</li>
+</ol>
+<hr>
+<h2>Step 5: Connect Glove to Readout Circuit</h2>
+<p><strong>Instructions:</strong></p>
+<ol>
+<li>
+<p>Solder the female header pins onto the <strong>same side of the readout circuit</strong> that contains the flex cable connectors.</p>
+<ul>
+<li>Insert the Adafruit Feather ESP32 microcontroller into the headers, aligning with the <strong>back pins</strong> (some pins on USB port side will hang free - this is expected).</li>
+</ul>
+</li>
+<li>
+<p>Place the glove <strong>grippy side up</strong> on the table.</p>
+</li>
+<li>
+<p>Thread each flex cable through the corresponding slots in the 3D-printed enclosure.</p>
+</li>
+<li>
+<p>Connect the flex cables to the readout circuit’s flex connectors.</p>
+</li>
+<li>
+<p>Fit the readout circuit firmly into the enclosure base and close the lid.</p>
+</li>
+<li>
+<p>Flip the enclosure over and thread a <strong>Velcro armband</strong> through the bottom slots for secure attachment.</p>
+</li>
+</ol>
 
   </main>
   <footer class="site-footer">
-    <p>&copy; NaN WiReSens Glove. All rights reserved.</p>
+    <p>&copy; <span id="year"></span>  Devin Murphy.  Code and Hardware Open-source under MIT License — please credit the authors.</p>
   </footer>
 </body>
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
 </html> 

@@ -13,7 +13,7 @@
       <a href="/order/">Order Our Designs</a>
       <a href="/make/">Make your own Design</a>
       <a href="/manufacturing/">Manufacturing + Assembly Guide</a>
-      <a href="https://forms.gle/your-form-link" target="_blank">Request Pre-Made Kit</a>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSeC9ZYmYzShO8EN6ykx-N-RFPJFUGItifUeHzMZDMI_j6rxug/viewform?usp=sharing&ouid=103426511521560236772" target="_blank">Request Pre-Made Kit</a>
       <a href="/recording/">Recording Instructions</a>
       <a href="/applications/">Applications</a>
     </nav>
@@ -22,7 +22,10 @@
     {{ content | safe }}
   </main>
   <footer class="site-footer">
-    <p>&copy; {{ "now" | date("yyyy") }} WiReSens Glove. All rights reserved.</p>
+    <p>&copy; <span id="year"></span>  Devin Murphy.  Code and Hardware Open-source under MIT License — please credit the authors.</p>
   </footer>
 </body>
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
 </html> 

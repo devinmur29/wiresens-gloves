@@ -1,0 +1,23 @@
+LASER CUTTING
+Universal Laser Systems
+
+File Preparation
+
+Scale SVG if necessary (compare model hand length to actual hand length)
+Optionally decrease the path detail to save time on cutting
+Illustrator → Object → Path → Simplify
+Rhino → Rebuild
+
+Silicone Rubber Settings
+
+Power: 90%
+Speed: 8%
+PPI: 300
+Vector Performance: Throughput +4
+
+Piezoresistive Velostat Settings
+
+Power: 15%
+Speed: 24%
+PPI: 500
+Vector Performance: Throughput +4

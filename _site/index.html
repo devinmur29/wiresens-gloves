@@ -13,14 +13,14 @@
       <a href="/order/">Order Our Designs</a>
       <a href="/make/">Make your own Design</a>
       <a href="/manufacturing/">Manufacturing + Assembly Guide</a>
-      <a href="https://forms.gle/your-form-link" target="_blank">Request Pre-Made Kit</a>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSeC9ZYmYzShO8EN6ykx-N-RFPJFUGItifUeHzMZDMI_j6rxug/viewform?usp=sharing&ouid=103426511521560236772" target="_blank">Request Pre-Made Kit</a>
       <a href="/recording/">Recording Instructions</a>
       <a href="/applications/">Applications</a>
     </nav>
   </header>
   <main class="site-main">
     <h1>WiReSens Glove</h1>
-<h2>A cost-effective, accessible pressure sensing glove based on flexible printed circuit board technology</h2>
+<h2>A Cost-Effective, Accessible Pressure Sensing Glove based on Flexible Printed Circuit Board Technology</h2>
 <p><img src="/assets/gloveOn.jpg" alt="Demo picture"></p>
 <!-- <nav class="main-nav">
   <a href="/">Home</a>
@@ -31,30 +31,72 @@
   <a href="/recording/">Recording Instructions</a>
   <a href="/applications/">Applications</a>
 </nav> -->
-<h2>Capture relative force distributions across the full palm</h2>
+<h2>Capture Relative Force Distributions Across the Full Palm</h2>
 <div style="position: relative; padding-bottom: 56.25%; height: 0; text-align: center;">
-  <iframe src="https://www.youtube.com/embed/XlyN0DDsffI" 
-          style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" 
-          frameborder="0" allowfullscreen>
+  <iframe 
+    src="https://www.youtube.com/embed/XlyN0DDsffI?autoplay=1&mute=1&loop=1&playlist=XlyN0DDsffI" 
+    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" 
+    frameborder="0" 
+    allow="autoplay; encrypted-media" 
+    allowfullscreen>
   </iframe>
 </div>
-<h2>Wirelessly capture dexterous manipulation in any environment</h2>
-<ul>
-<li>Will show video of example manipulations captured in the wild (Fencing, Cooking, Playing Piano, etc.)</li>
-</ul>
+<h2>Wirelessly Capture Dexterous Manipulation in any Environment</h2>
+<div style="position: relative; padding-bottom: 56.25%; height: 0; text-align: center;">
+  <iframe 
+    src="https://www.youtube.com/embed/6O8kKXV7YOk?autoplay=1&mute=1&loop=1&playlist=6O8kKXV7YOk" 
+    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" 
+    frameborder="0" 
+    allow="autoplay; encrypted-media" 
+    allowfullscreen>
+  </iframe>
+</div>
 <h2>Fully Open Source Ecosystem</h2>
-<ul>
-<li>Graphic which shows sensors, readout circuit, software/visualization</li>
-</ul>
-<p>Sensors that are reproducible and can be directly ordered from the materials listed on this site</p>
-<h2>Automated Design to fit the Unique Contours of Human Hands</h2>
-<ul>
-<li>Image showing unique designs and screen grabs of the design process</li>
-</ul>
+<video autoplay muted loop playsinline>
+  <source src="assets/opensource.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+<h2>Automated Design to Fit the Unique Contours of Human Hands</h2>
+<p><img src="/assets/gloveDesigns.png" alt="gloveDesigns"></p>
+<p>If you use the WiReSens Gloves in your research, please cite our <a href="https://dl.acm.org/doi/10.1145/3706599.3720147">paper</a>:</p>
+<div class="bibtex-block">
+  <button class="copy-btn" onclick="copyBibtex(this)">Copy</button>
+  <pre><code class="language-bibtex">
+@inproceedings{10.1145/3706599.3720147,
+  author    = {Murphy, Devin and Li, Yichen and Owens, Crystal Elaine and 
+               Stanton, Layla and Liang, Paul Pu and Luo, Yiyue and 
+               Torralba, Antonio and Matusik, Wojciech},
+  title     = {Fits like a Flex-Glove: Automatic Design of Personalized FPCB-Based Tactile Sensing Gloves},
+  year      = {2025},
+  isbn      = {9798400713958},
+  publisher = {Association for Computing Machinery},
+  address   = {New York, NY, USA},
+  url       = {https://doi.org/10.1145/3706599.3720147},
+  doi       = {10.1145/3706599.3720147},
+  booktitle = {Proceedings of the Extended Abstracts of the CHI Conference on Human Factors in Computing Systems},
+  articleno = {280},
+  numpages  = {8},
+  keywords  = {Tactile Sensing, Flexible PCB, Wearable Devices},
+  series    = {CHI EA '25}
+}
+  </code></pre>
+</div>
+<script>
+function copyBibtex(btn) {
+  const codeBlock = btn.nextElementSibling.innerText;
+  navigator.clipboard.writeText(codeBlock).then(() => {
+    btn.textContent = "Copied!";
+    setTimeout(() => btn.textContent = "Copy", 2000);
+  });
+}
+</script>
 
   </main>
   <footer class="site-footer">
-    <p>&copy; NaN WiReSens Glove. All rights reserved.</p>
+    <p>&copy; <span id="year"></span>  Devin Murphy.  Code and Hardware Open-source under MIT License — please credit the authors.</p>
   </footer>
 </body>
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
 </html> 
