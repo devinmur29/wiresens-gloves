@@ -37,7 +37,7 @@ layout: base.njk
 
 <div style="position: relative; padding-bottom: 56.25%; height: 0; text-align: center;">
   <iframe 
-    src="https://www.youtube.com/embed/6O8kKXV7YOk?autoplay=1&mute=1&loop=1&playlist=6O8kKXV7YOk" 
+    src="https://www.youtube.com/embed/ARi_KTmXdDQ?autoplay=1&mute=1&loop=1&playlist=ARi_KTmXdDQ" 
     style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" 
     frameborder="0" 
     allow="autoplay; encrypted-media" 
@@ -55,6 +55,80 @@ layout: base.njk
 
 ## Automated Design to Fit the Unique Contours of Human Hands
 ![gloveDesigns](assets/gloveDesigns.png)
+
+
+## Team
+
+
+<div class="row" style="margin-top: 20px; ">
+
+  <div class="col-md-1" style="text-align: center;">
+  </div>
+
+  <div class="col-md-2" style="text-align: center;">
+      <img src="./assets/DevinMurphy.jpg" alt="Profile Picture" style="max-height: 160px; max-width: 100%; border-radius: 100%;">
+      <h5 style="margin-top: 0px;"><a href="https://devin-dot-com.vercel.app/"> Devin Murphy </a></h5>
+  </div>
+
+  <div class="col-md-2" style="text-align: center;">
+      <img src="./assets/Crystal.jpg" alt="Profile Picture" style="max-height: 160px; max-width: 100%; border-radius: 100%;">
+      <h5 style="margin-top: 0px;"><a href="https://www.crystalowens.com/"> Crystal Elaine Owens </a></h5>
+  </div>
+
+  <div class="col-md-2" style="text-align: center;">
+      <img src="./assets/ray.png" alt="Profile Picture" style="max-height: 150px; max-width: 100%; border-radius: 100%;">
+      <h5 style="margin-top: 0px;"><a href="https://rayxsong.com/about"> Ray Song </a></h5>
+  </div>
+
+  <div class="col-md-2" style="text-align: center;">
+      <img src="./assets/nico.jpg" alt="Profile Picture" style="max-height: 150px; max-width: 100%; border-radius: 100%;">
+      <h5 style="margin-top: 0px;"><a href=""> Nicolas Valayannopoulos-Akrivou </a></h5>
+  </div>
+
+  <div class="col-md-1" style="text-align: center;">
+  </div>
+
+  <div class="col-md-1" style="text-align: center;">
+  </div>
+
+  <div class="col-md-2" style="text-align: center;">
+      <img src="./assets/antonio.jpg" alt="Profile Picture" style="max-height: 160px; max-width: 100%; border-radius: 100%;">
+      <h5 style="margin-top: 0px;"><a href="https://groups.csail.mit.edu/vision/torralbalab/"> Antonio Torralba </a></h5>
+  </div>
+
+  <div class="col-md-2" style="text-align: center;">
+      <img src="./assets/yiyue.jpg" alt="Profile Picture" style="max-height: 150px; max-width: 100%; border-radius: 100%;">
+      <h5 style="margin-top: 0px;"><a href="https://yyueluo.com/"> Yiyue Luo </a></h5>
+  </div>
+
+  <div class="col-md-2" style="text-align: center;">
+      <img src="./assets/paul.jpg" alt="Profile Picture" style="max-height: 160px; max-width: 100%; border-radius: 100%;">
+      <h5 style="margin-top: 0px;"><a href="https://pliang279.github.io/"> Paul Pu Liang </a></h5>
+  </div>
+
+  <div class="col-md-2" style="text-align: center;">
+      <img src="./assets/wojciech.jpg" alt="Profile Picture" style="max-height: 160px; max-width: 100%; border-radius: 100%;">
+      <h5 style="margin-top: 0px;"><a href="https://cdfg.mit.edu/wojciech"> Wojciech Matusik </a></h5>
+  </div>
+
+
+  <div class="col-md-1" style="text-align: center;">
+  </div>
+
+  <div class="col-md-2">
+  <img src="./assets/csail.png" style="height: auto; object-fit: contain;"/>
+  </div>
+  <div class="col-md-2">
+  <img src="./assets/medialab.png"/>
+  </div>
+  <div class="col-md-2">
+  <img src="./assets/uw.png"/>
+  </div>
+  </div>
+
+
+### Previous Contributors
+[Yichen Li](https://people.csail.mit.edu/yichenl/), [Young Joong Lee](https://www.linkedin.com/in/youngyjl), [Layla Stanton](https://www.linkedin.com/in/layla-stanton), [Eden Hen](https://www.linkedin.com/in/eden-hen-profile)
 
 If you use the WiReSens Gloves in your research, please cite our [paper](https://dl.acm.org/doi/10.1145/3706599.3720147):
 

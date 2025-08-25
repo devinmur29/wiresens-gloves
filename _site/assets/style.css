@@ -110,6 +110,44 @@ img, video {
   margin: 1.5rem 0;
   box-shadow: 0 2px 12px rgba(224,64,251,0.08);
 }
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  justify-content: center; /* centers the cols horizontally */
+}
+
+[class^="col-"] {
+  padding: 10px;
+  text-align: center;
+}
+
+/* Approximate Bootstrap's col-md-2 and col-md-3 */
+
+.col-md-1 {
+  flex: 0 0 8%; /* 2/12 of the row */
+  max-width: 8%;
+}
+.col-md-2 {
+  flex: 0 0 16.66%; /* 2/12 of the row */
+  max-width: 16.66%;
+}
+
+.col-md-3 {
+  flex: 0 0 25%; /* 3/12 of the row */
+  max-width: 25%;
+}
+
+/* Responsive fallback: stack on small screens */
+@media (max-width: 768px) {
+  .col-md-2,
+  .col-md-3 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}
+
 @media (max-width: 600px) {
   .site-main {
     padding: 1rem 0.5rem;
