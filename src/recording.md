@@ -61,36 +61,6 @@ Follow the installation instructions from the following repositories:
 
 *(skip if gloves already shipped pre-flashed)*
 
-
-Got it — I’ll polish your README to make the instructions clearer, reduce redundancy, and keep the flow easy to follow for new users. Here’s a revised version:
-
----
-
-# Recording Instructions
-
-Before recording with your gloves, you’ll need to:
-
-1. Install the required software and firmware.
-2. Upload firmware to your microcontrollers.
-3. Configure the devices using the backend and GUI tools.
-
----
-
-## 1. Install Software
-
-Follow the installation instructions from the following repositories:
-
-* **[WiSensToolkit](https://github.com/devinmur29/WiSensToolkit/tree/main):** Firmware for the microcontrollers
-* **[WiReSensBackend](https://github.com/devinmur29/WiReSensBackend):** Python library for interfacing with sensors
-* **[WiReSensWeb](https://github.com/devinmur29/WiReSensWeb) (Optional):** Real-time visualizer and GUI.
-
-  * Use it online at [https://wi-re-sens-web.vercel.app/](https://wi-re-sens-web.vercel.app/)
-  * Or set it up locally for offline access.
-
----
-
-## 2. Upload Firmware
-
 ### Transmitter vs. Receiver
 
 * **Transmitter:** ESP32 connected to the readout circuit and glove sensor via flex cables.
